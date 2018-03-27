@@ -17,6 +17,7 @@ services:
         volume:
           read_only: true
     network_mode: "host"
+    privileged: true
 
   debian-nfs-image:
     image: lnlsdig/debian-nfs-image
