@@ -1,0 +1,32 @@
+version: '3.4'
+
+services:
+  nfs-server:
+    image: lnlsdig/nfs-server
+    ports:
+      - "111:111/udp"
+      - "2049:2049/tcp"
+    container_name: nfs-server
+    depends_on:
+      - debian-nfs-image
+    command: ["/nfsroot"]
+    volumes:
+      - type: volume
+        source: debian-nfs-image-volume
+        target: /nfsroot
+        volume:
+          read_only: true
+    network_mode: "host"
+
+  debian-nfs-image:
+    image: lnlsdig/debian-nfs-image
+    container_name: debian-nfs-image
+    volumes:
+      - type: volume
+        source: debian-nfs-image-volume
+        target: /nfsroot
+        volume:
+          read_only: true
+
+volumes:
+  debian-nfs-image-volume:
