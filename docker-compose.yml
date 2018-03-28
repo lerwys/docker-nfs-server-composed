@@ -11,7 +11,7 @@ services:
     container_name: nfs-server
     depends_on:
       - debian-nfs-image
-    command: ["/nfsroot"]
+    command: ["/"]
     volumes:
       - type: volume
         source: debian-nfs-image-volume
