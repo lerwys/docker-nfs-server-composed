@@ -16,7 +16,6 @@ services:
         target: /exports/rootfs
         volume:
           read_only: true
-    volumes:
       - type: bind
         source: ./debian-rootfs/exports/home
         target: /exports/home
