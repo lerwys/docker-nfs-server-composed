@@ -9,8 +9,6 @@ services:
       - "32765-32769:32765-32769/tcp"
       - "32765-32769:32765-32769/udp"
     container_name: nfs-server
-    depends_on:
-      - debian-nfs-image
     command: ["/exports/rootfs", "/exports/home"]
     volumes:
       - type: bind
