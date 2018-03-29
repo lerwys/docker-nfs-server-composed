@@ -11,24 +11,17 @@ services:
     container_name: nfs-server
     depends_on:
       - debian-nfs-image
-    command: ["/"]
+    command: ["/exports/rootfs", "/exports/home"]
     volumes:
-      - type: volume
-        source: debian-nfs-image-volume
-        target: /nfsroot
+      - type: bind
+        source: ./debian-rootfs/exports/rootfs
+        target: /exports/rootfs
+        volume:
+          read_only: true
+    volumes:
+      - type: bind
+        source: ./debian-rootfs/exports/home
+        target: /exports/home
         volume:
           read_only: true
     privileged: true
-
-  debian-nfs-image:
-    image: lnlsdig/debian-nfs-image
-    container_name: debian-nfs-image
-    volumes:
-      - type: volume
-        source: debian-nfs-image-volume
-        target: /nfsroot
-        volume:
-          read_only: true
-
-volumes:
-  debian-nfs-image-volume:
