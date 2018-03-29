@@ -1,0 +1,3 @@
+[submodule "debian-rootfs"]
+	path = debian-rootfs
+	url = https://github.com/lerwys/debian-rootfs
