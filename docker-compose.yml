@@ -9,7 +9,10 @@ services:
       - "32765-32769:32765-32769/tcp"
       - "32765-32769:32765-32769/udp"
     container_name: nfs-server
-    command: ["/exports/rootfs", "/exports/home"]
+    command: ["/exports/rootfs,192.168.2.0/24",
+                "/exports/home/dell-r230-server-1,192.168.2.0/24",
+                "/exports/home/dell-r230-server-2,192.168.2.0/24"
+    ]
     volumes:
       - type: bind
         source: ./debian-rootfs/exports/rootfs
