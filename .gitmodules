@@ -1,3 +1,0 @@
-[submodule "debian-rootfs"]
-	path = debian-rootfs
-	url = https://github.com/lnls-sirius/debian-rootfs
