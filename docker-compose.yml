@@ -10,20 +10,47 @@ services:
       - "2049:2049/udp"
       - "32765-32769:32765-32769/tcp"
       - "32765-32769:32765-32769/udp"
+    depends_on:
+      - debian-rootfs
+      - debian-homefs
     container_name: nfs-server
     command: ["/exports/rootfs,*",
                 "/exports/home/dell-r230-server-1,*",
                 "/exports/home/dell-r230-server-2,*"
     ]
     volumes:
-      - type: bind
-        source: ./debian-rootfs/exports/rootfs
+      - type: volume
+        source: debian-rootfs-volume
         target: /exports/rootfs
         volume:
           read_only: true
-      - type: bind
-        source: ./debian-rootfs/exports/home
+      - type: volume
+        source: debian-homefs-volume
         target: /exports/home
         volume:
           read_only: true
     privileged: true
+
+  debian-rootfs:
+    image: lnls/debian-rootfs
+    container_name: debian-rootfs
+    volumes:
+      - type: volume
+        source: debian-rootfs-volume
+        target: /rootfs
+        volume:
+          read_only: true
+
+  debian-homefs:
+    image: lnls/debian-homefs
+    container_name: debian-homefs
+    volumes:
+      - type: volume
+        source: debian-homefs-volume
+        target: /homefs
+        volume:
+          read_only: true
+
+volumes:
+  debian-rootfs-volume:
+  debian-homefs-volume:
