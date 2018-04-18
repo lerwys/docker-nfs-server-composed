@@ -16,7 +16,9 @@ services:
     container_name: nfs-server
     command: ["/exports/rootfs,*",
                 "/exports/home/dell-r230-server-1,*",
-                "/exports/home/dell-r230-server-2,*"
+                "/exports/home/dell-r230-server-2,*",
+                "/exports/autosave/dell-r230-server-1,*",
+                "/exports/autosave/dell-r230-server-2,*"
     ]
     volumes:
       - type: volume
