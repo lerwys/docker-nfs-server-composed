@@ -29,6 +29,9 @@ services:
         target: /exports/home
         volume:
           read_only: true
+      - type: volume
+        source: autosave-volume
+        target: /exports/autosave
     privileged: true
 
   debian-rootfs:
@@ -54,3 +57,4 @@ services:
 volumes:
   debian-rootfs-volume:
   debian-homefs-volume:
+  autosave-volume:
