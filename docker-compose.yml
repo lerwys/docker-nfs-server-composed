@@ -17,8 +17,24 @@ services:
     command: ["/exports/rootfs,*,ro,async",
                 "/exports/home/dell-r230-server-1,*,ro,async",
                 "/exports/home/dell-r230-server-2,*,ro,async",
+                "/exports/home/dell-r230-server-3,*,ro,async",
+                "/exports/home/dell-r230-server-4,*,ro,async",
+                "/exports/home/dell-r230-server-5,*,ro,async",
+                "/exports/home/dell-r230-server-6,*,ro,async",
+                "/exports/home/dell-r230-server-7,*,ro,async",
+                "/exports/home/dell-r230-server-8,*,ro,async",
+                "/exports/home/dell-r230-server-9,*,ro,async",
+                "/exports/home/dell-r230-server-10,*,ro,async",
                 "/exports/autosave/dell-r230-server-1,*,rw,async",
-                "/exports/autosave/dell-r230-server-2,*,rw,async"
+                "/exports/autosave/dell-r230-server-2,*,rw,async",
+                "/exports/autosave/dell-r230-server-3,*,rw,async",
+                "/exports/autosave/dell-r230-server-4,*,rw,async",
+                "/exports/autosave/dell-r230-server-5,*,rw,async",
+                "/exports/autosave/dell-r230-server-6,*,rw,async",
+                "/exports/autosave/dell-r230-server-7,*,rw,async",
+                "/exports/autosave/dell-r230-server-8,*,rw,async",
+                "/exports/autosave/dell-r230-server-9,*,rw,async",
+                "/exports/autosave/dell-r230-server-10,*,rw,async"
     ]
     volumes:
       - type: volume
