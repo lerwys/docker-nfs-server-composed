@@ -2,6 +2,7 @@ version: '3.4'
 
 services:
   nfs-server:
+    restart: always
     image: lnls/nfs-server
     ports:
       - "111:111/tcp"
