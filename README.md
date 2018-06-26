@@ -9,15 +9,15 @@ Install NFS server on the host machine:
 
 Stop host services from being run
 
-   sudo systemctl stop nfs-server
-   sudo systemctl stop rpcbind
-   sudo systemctl stop rpcbind.socket
+    sudo systemctl stop nfs-server
+    sudo systemctl stop rpcbind
+    sudo systemctl stop rpcbind.socket
 
 Disable NFS services from being started on boot:
 
-   sudo systemctl disable nfs-server
-   sudo systemctl disable rpcbind
-   sudo systemctl disable rpcbind.socket
+    sudo systemctl disable nfs-server
+    sudo systemctl disable rpcbind
+    sudo systemctl disable rpcbind.socket
 
 Run image
 
