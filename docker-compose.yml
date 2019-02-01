@@ -54,7 +54,7 @@ services:
     privileged: true
 
   debian-rootfs:
-    image: lnls/debian-rootfs
+    image: lnls/debian-rootfs:9.7-kernel-4.9.0-8-20190201
     container_name: debian-rootfs
     volumes:
       - type: volume
