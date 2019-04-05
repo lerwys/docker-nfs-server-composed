@@ -56,7 +56,7 @@ services:
     dns_search: lnls-sirius.com.br
 
   debian-rootfs:
-    image: lnls/debian-rootfs:9.8-kernel-4.9.0-8-20190405
+    image: lnls/debian-rootfs:9.8-kernel-4.9.0-8-20190405-1
     container_name: debian-rootfs
     volumes:
       - type: volume
