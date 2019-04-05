@@ -52,6 +52,8 @@ services:
         source: autosave-volume
         target: /exports/autosave
     privileged: true
+    dns: 10.128.255.6
+    dns_search: lnls-sirius.com.br
 
   debian-rootfs:
     image: lnls/debian-rootfs:9.8-kernel-4.9.0-8-20190405
