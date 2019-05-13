@@ -19,6 +19,10 @@ Disable NFS services from being started on boot:
     sudo systemctl disable rpcbind
     sudo systemctl disable rpcbind.socket
 
+Load driver at boot by appending driver "nfsd" to the file /etc/modules
+
+    sudo bash -c "echo "nfsd" >> /etc/modules"
+
 Run image
 
     docker-compose up -d
