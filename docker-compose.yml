@@ -11,6 +11,9 @@ services:
       - "2049:2049/udp"
       - "32765-32769:32765-32769/tcp"
       - "32765-32769:32765-32769/udp"
+    logging:
+      options:
+        max-size: 50m
     depends_on:
       - debian-rootfs
       - debian-homefs
@@ -58,6 +61,9 @@ services:
   debian-rootfs:
     image: lnls/debian-rootfs:9.8-kernel-4.9.0-8-20190405-1
     container_name: debian-rootfs
+    logging:
+      options:
+        max-size: 50m
     volumes:
       - type: volume
         source: debian-rootfs-volume
@@ -68,6 +74,9 @@ services:
   debian-homefs:
     image: lnls/debian-homefs
     container_name: debian-homefs
+    logging:
+      options:
+        max-size: 50m
     volumes:
       - type: volume
         source: debian-homefs-volume
