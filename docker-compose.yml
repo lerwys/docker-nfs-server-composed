@@ -59,7 +59,7 @@ services:
     dns_search: lnls-sirius.com.br
 
   debian-rootfs:
-    image: lnls/debian-rootfs:pre-9.9-kernel-4.9.0-11-20200121
+    image: lnls/debian-rootfs:9.9-kernel-4.9.0-11-20200122
     container_name: debian-rootfs
     logging:
       options:
